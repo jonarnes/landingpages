@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>Landing page	</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Landing page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Exo+2:400,500italic,700' rel='stylesheet' type='text/css'>
-
 <style>
 @charset UTF-8;
 html {
-color:#000;
-font-family:sans-serif;
--ms-text-size-adjust:100%;
--webkit-text-size-adjust:100%;
-background:white;
+	color:#000;
+	font-family:sans-serif;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+	background:white;
 }
 
 body {
-color:rgba(44, 62, 80,1.0);
-font-family: 'Exo 2', sans-serif;
-font-weight:400;
-font-style:normal;
-line-height:1;
-position:relative;
-background:rgba(231, 76, 60,1.0);
-overflow-x:hidden;
-margin:0;
-padding:0;
-
+	color:rgba(44, 62, 80,1.0);
+	font-family: 'Exo 2', sans-serif;
+	font-weight:400;
+	font-style:normal;
+	line-height:1;
+	position:relative;
+	background:rgba(231, 76, 60,1.0);
+	overflow-x:hidden;
+	margin:0;
+	padding:0;
 }
-
 
 html,body {
 	font-size:100%;
@@ -142,7 +136,9 @@ section.logo-area .hero #hero-image {
 	left:0;
 	width:100%;
 }
-
+#hero{
+        opacity:1;
+}
 
 section.logo-area .logo {
 	-webkit-transform:translate3d(0,0,0);
@@ -242,30 +238,5 @@ src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAkGBwgHBgkICAgKCgkL
    Hello
 </footer>
 <script>
-
-var logo = document.getElementById("hero"),
-    heroImage = document.getElementById("hero-image"),
-    isMobile = function(){
-    	return (/ios|iphone|ipod|android|mobile|blackberry|fennec/).test(navigator.userAgent.toLowerCase());
-    },
-    vendorPrefix = function () {
-        var a, b = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/,
-            c = document.getElementById("init").style,
-            d = "";
-        for (a in c)
-            if (b.test(a)) {
-                d = a.match(b)[0];
-                break;
-        }
-        return "WebkitOpacity" in c && (d = "Webkit"), "KhtmlOpacity" in c && (d = "Khtml"),
-        function (a) {
-            return d + (d.length > 0 ? a.charAt(0).toUpperCase() + a.slice(1) : a)
-        }
-    }();
-var prefixedTransform = vendorPrefix("transform");
-window.onscroll = function () {
-	if(!isMobile())
-    	logo.style[prefixedTransform] = "translate3d(0px," + window.scrollY / 1.3 + "px, 0px)", heroImage.style[prefixedTransform] = "translate3d(0px," + window.scrollY / 2.3 + "px, 0px)"
-};
-</script>
+var logo=document.getElementById("hero"),heroText=document.getElementById("hero"),heroImage=document.getElementById("hero-image"),isMobile=/ios|iphone|ipod|android|mobile|blackberry|fennec/.test(navigator.userAgent.toLowerCase()),vendorPrefix=function(){var e,t=/^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/,n=document.getElementById("init").style,r="";for(e in n)if(t.test(e)){r=e.match(t)[0];break}return"WebkitOpacity"in n&&(r="Webkit"),"KhtmlOpacity"in n&&(r="Khtml"),function(e){return r+(r.length>0?e.charAt(0).toUpperCase()+e.slice(1):e)}}();var prefixedTransform=vendorPrefix("transform");window.onscroll=function(){if(!isMobile)logo.style[prefixedTransform]="translate3d(0px,"+window.scrollY/1.3+"px, 0px)",heroImage.style[prefixedTransform]="translate3d(0px,"+window.scrollY/2.3+"px, 0px)",heroText.style["opacity"]= (1 - ((window.scrollY/3)/100));}</script>
 </body></html>
